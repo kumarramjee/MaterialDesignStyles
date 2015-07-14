@@ -19,6 +19,7 @@ public class Watsappactivity extends Activity implements ObservableScrollViewCal
     private int mFlexibleSpaceImageHeight;
     private int mFabMargin;
     private boolean mFabIsShown;
+    private ImageView image;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,11 +28,15 @@ public class Watsappactivity extends Activity implements ObservableScrollViewCal
         SetUpUI();
 
 
+
+
+
+
     }
 
     private void SetUpUI() {
         image_back = (ImageView) findViewById(R.id.imageback);
-
+        image = (ImageView) findViewById(R.id.image);
 
     }
 
