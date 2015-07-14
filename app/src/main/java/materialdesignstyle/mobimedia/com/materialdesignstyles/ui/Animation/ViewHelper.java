@@ -9,7 +9,8 @@ import static materialdesignstyle.mobimedia.com.materialdesignstyles.ui.Animatio
  * Created by ram on 14/7/15.
  */
 public class ViewHelper {
-    private ViewHelper() {}
+    private ViewHelper() {
+    }
 
     public static float getAlpha(View view) {
         return NEEDS_PROXY ? wrap(view).getAlpha() : Honeycomb.getAlpha(view);

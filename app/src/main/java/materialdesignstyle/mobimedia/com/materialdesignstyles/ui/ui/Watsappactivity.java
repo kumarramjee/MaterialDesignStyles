@@ -7,6 +7,7 @@ import android.widget.ImageView;
 import android.widget.Toolbar;
 
 import materialdesignstyle.mobimedia.com.materialdesignstyles.R;
+import materialdesignstyle.mobimedia.com.materialdesignstyles.ui.Utility.HorizontalListView;
 import matterialdesignlibrary.mobimedia.com.mobimedialibrary.ObservableScrollViewCallbacks;
 import matterialdesignlibrary.mobimedia.com.mobimedialibrary.ScrollState;
 
@@ -20,16 +21,15 @@ public class Watsappactivity extends Activity implements ObservableScrollViewCal
     private int mFabMargin;
     private boolean mFabIsShown;
     private ImageView image;
+    private HorizontalListView mHorizontallistview;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_watsappactivity);
         SetUpUI();
-
-
-
-
+        mFlexibleSpaceImageHeight = getResources().getDimensionPixelSize(R.dimen.flexible_space_image_height);
+        mFlexibleSpaceShowFabOffset = getResources().getDimensionPixelSize(R.dimen.flexible_space_show_fab_offset);
 
 
     }
@@ -37,7 +37,7 @@ public class Watsappactivity extends Activity implements ObservableScrollViewCal
     private void SetUpUI() {
         image_back = (ImageView) findViewById(R.id.imageback);
         image = (ImageView) findViewById(R.id.image);
-
+        mHorizontallistview = (HorizontalListView) findViewById(R.id.horizontalimagelist);
     }
 
 
