@@ -35,20 +35,15 @@ public class WatttsAppActivtiy extends Activity implements ObservableScrollViewC
     private HorizontalImageAdapter mHorizontalImageAdapter;
 
     private int imagearray[] = {
-        R.drawable.scateredclouds, R.drawable.nonelse, R.drawable.fewclouds, R.drawable.brokenclouds, R.drawable.lightrain,
-                R.drawable.moderate, R.drawable.moderaterain, R.drawable.overcatclouds, R.drawable.scateredclouds
+            R.drawable.scateredclouds, R.drawable.nonelse, R.drawable.fewclouds, R.drawable.brokenclouds, R.drawable.lightrain,
+            R.drawable.moderate, R.drawable.moderaterain, R.drawable.overcatclouds, R.drawable.scateredclouds
     };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wattts_app_activtiy);
-
-
         SetUPUI();
-
-
-
         mFlexibleSpaceImageHeight = getResources().getDimensionPixelSize(R.dimen.flexible_space_image_height);
         mFlexibleSpaceShowFabOffset = getResources().getDimensionPixelSize(R.dimen.flexible_space_show_fab_offset);
         mActionBarSize = 60;
@@ -59,9 +54,9 @@ public class WatttsAppActivtiy extends Activity implements ObservableScrollViewC
             }
         });
         mFabMargin = getResources().getDimensionPixelSize(R.dimen.margin_standard);
-        ViewHelper.setScaleX(mFab, 0);
+       /* ViewHelper.setScaleX(mFab, 0);
         ViewHelper.setScaleY(mFab, 0);
-        ScrollUtils.addOnGlobalLayoutListener(mScrollView, new Runnable() {
+       */ ScrollUtils.addOnGlobalLayoutListener(mScrollView, new Runnable() {
             @Override
             public void run() {
                 //mScrollView.scrollTo(0, mFlexibleSpaceImageHeight - mActionBarSize);
@@ -80,7 +75,7 @@ public class WatttsAppActivtiy extends Activity implements ObservableScrollViewC
         });
 
         mScrollView.setScrollViewCallbacks(this);
-        mHorizontalImageAdapter=new HorizontalImageAdapter(WatttsAppActivtiy.this,imagearray);
+        mHorizontalImageAdapter = new HorizontalImageAdapter(WatttsAppActivtiy.this, imagearray);
         //horizontalimagelist.setAdapter(mHorizontalImageAdapter);
     }
 
@@ -136,6 +131,7 @@ public class WatttsAppActivtiy extends Activity implements ObservableScrollViewC
             ViewHelper.setTranslationX(mFab, mOverlayView.getWidth() - mFabMargin - mFab.getWidth());
             ViewHelper.setTranslationY(mFab, fabTranslationY);
         }
+
 
         if (fabTranslationY < mFlexibleSpaceShowFabOffset) {
             hideFab();
