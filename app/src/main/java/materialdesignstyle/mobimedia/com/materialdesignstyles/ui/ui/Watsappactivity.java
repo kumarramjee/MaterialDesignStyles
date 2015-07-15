@@ -5,10 +5,12 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 import android.widget.Toolbar;
 
 import materialdesignstyle.mobimedia.com.materialdesignstyles.R;
 import materialdesignstyle.mobimedia.com.materialdesignstyles.ui.Utility.HorizontalListView;
+import matterialdesignlibrary.mobimedia.com.mobimedialibrary.ObservableScrollView;
 import matterialdesignlibrary.mobimedia.com.mobimedialibrary.ObservableScrollViewCallbacks;
 import matterialdesignlibrary.mobimedia.com.mobimedialibrary.ScrollState;
 
@@ -26,7 +28,9 @@ public class Watsappactivity extends Activity implements ObservableScrollViewCal
 
     private View mFab;
     private int mActionBarSize;
-private int imageheight;
+    private int imageheight;
+    private ObservableScrollView Scrollview;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,12 +42,10 @@ private int imageheight;
         mFlexibleSpaceShowFabOffset = getResources().getDimensionPixelSize(R.dimen.flexible_space_show_fab_offset);
 
 
+        imageheight = image.getMaxHeight();
+        Log.i("Height of image is:", "==" + imageheight);
 
-
-        imageheight=image.getMaxHeight();
-        Log.i("Height of image is:","=="+imageheight);
-
-
+        Scrollview.setScrollViewCallbacks(this);
 
 
     }
@@ -52,8 +54,9 @@ private int imageheight;
         image_back = (ImageView) findViewById(R.id.imageback);
         image = (ImageView) findViewById(R.id.image);
         mHorizontallistview = (HorizontalListView) findViewById(R.id.horizontalimagelist);
-    }
+        Scrollview = (ObservableScrollView) findViewById(R.id.Scrollview);
 
+    }
 
 
     @Override
@@ -68,6 +71,8 @@ private int imageheight;
 
     @Override
     public void onScrollChanged(int scrollY, boolean firstScroll, boolean dragging) {
+        Toast.makeText(Watsappactivity.this,"Scroll Clicked",Toast.LENGTH_SHORT).show();
+
 
     }
 

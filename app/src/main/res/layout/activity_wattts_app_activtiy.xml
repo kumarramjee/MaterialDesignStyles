@@ -1,12 +1,9 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="materialdesignstyle.mobimedia.com.materialdesignstyles.ui.ui.WatttsAppActivtiy">
+    android:layout_height="match_parent">
 
-    <include
-        android:id="@+id/toolbar"
-        layout="@layout/transparenttoolbar"></include>
+
 
     <ImageView
         android:id="@+id/image"
@@ -164,17 +161,95 @@
                 </RelativeLayout>
             </RelativeLayout>
 
-
-            <!--
             <TextView
+                android:id="@+id/textid1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@android:color/white"
-                android:paddingBottom="@dimen/activity_vertical_margin"
-                android:paddingLeft="@dimen/activity_horizontal_margin"
-                android:paddingRight="@dimen/activity_horizontal_margin"
-                android:paddingTop="@dimen/activity_vertical_margin"
-               />-->
+                android:text="Hi how are you" />
+
+
+            <TextView
+                android:id="@+id/textid2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hi how are you" />
+            <TextView
+                android:id="@+id/textid12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hi how are you" />
+            <TextView
+                android:id="@+id/textid21"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hi how are you" />
+            <TextView
+                android:id="@+id/textid12121"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hi how are you" />
+            <TextView
+                android:id="@+id/textid21212121"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hi how are you" />
+            <TextView
+                android:id="@+id/textidvv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hi how are you" />
+            <TextView
+                android:id="@+id/textid12121233"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hi how are you" />
+            <TextView
+                android:id="@+id/textid32"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hi how are you" />
+            <TextView
+                android:id="@+id/textid21244"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hi how are you" />
+            <TextView
+                android:id="@+id/textid533"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hi how are you" />
+            <TextView
+                android:id="@+id/textid4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hi how are you" />
+            <TextView
+                android:id="@+id/textid44"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hi how are you" />
+            <TextView
+                android:id="@+id/textid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hi how are you" />
+            <TextView
+                android:id="@+id/textid4343"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hi how are you" />
+            <TextView
+                android:id="@+id/textid434343434"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hi how are you" />
+            <TextView
+                android:id="@+id/textid666"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hi how are you" />
+
+
         </LinearLayout>
 
 
@@ -201,19 +276,20 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/flexible_space_image_height"
             android:background="@android:color/transparent" />
-    </LinearLayout>
 
+
+    </LinearLayout>
 
     <ImageButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="left|top"
         android:layout_marginBottom="@dimen/fab_button_margin_bottom"
         android:layout_marginRight="@dimen/fab_button_margin_right"
         android:background="@drawable/fab_shape"
         android:scaleType="center"
+        android:layout_gravity="top|left"
         android:src="@drawable/fab_ic_add"
         android:tint="@android:color/white" />
 
-</RelativeLayout>
+</FrameLayout>

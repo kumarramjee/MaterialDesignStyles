@@ -39,8 +39,7 @@ public class WatttsAppActivtiy extends Activity implements ObservableScrollViewC
 
         mFlexibleSpaceImageHeight = getResources().getDimensionPixelSize(R.dimen.flexible_space_image_height);
         mFlexibleSpaceShowFabOffset = getResources().getDimensionPixelSize(R.dimen.flexible_space_show_fab_offset);
-        mActionBarSize = 56;
-        mFab = (ImageView) findViewById(R.id.fab);
+        mActionBarSize = 100;
         mFab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -68,6 +67,7 @@ public class WatttsAppActivtiy extends Activity implements ObservableScrollViewC
             }
         });
 
+        mScrollView.setScrollViewCallbacks(this);
 
     }
 
@@ -76,9 +76,9 @@ public class WatttsAppActivtiy extends Activity implements ObservableScrollViewC
         mImageView = findViewById(R.id.image);
         mOverlayView = findViewById(R.id.overlay);
         mScrollView = (ObservableScrollView) findViewById(R.id.scroll);
-        mScrollView.setScrollViewCallbacks(this);
         mTitleView = (TextView) findViewById(R.id.title);
         mTitleView.setText("MobiMedia Technology");
+        mFab = (ImageView) findViewById(R.id.fab);
 
 
     }
@@ -124,11 +124,10 @@ public class WatttsAppActivtiy extends Activity implements ObservableScrollViewC
             ViewHelper.setTranslationY(mFab, fabTranslationY);
         }
 
-        // Show/hide FAB
         if (fabTranslationY < mFlexibleSpaceShowFabOffset) {
-            //  hideFab();
+            hideFab();
         } else {
-            // showFab();
+            showFab();
         }
     }
 
