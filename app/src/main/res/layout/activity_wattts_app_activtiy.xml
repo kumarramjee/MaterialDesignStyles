@@ -1,0 +1,219 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="materialdesignstyle.mobimedia.com.materialdesignstyles.ui.ui.WatttsAppActivtiy">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/transparenttoolbar"></include>
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/flexible_space_image_height"
+        android:scaleType="centerCrop"
+        android:src="@drawable/sky" />
+
+    <View
+        android:id="@+id/overlay"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/flexible_space_image_height" />
+
+    <matterialdesignlibrary.mobimedia.com.mobimedialibrary.ObservableScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/flexible_space_image_height"
+                android:background="@android:color/transparent" />
+
+
+            <!--//add herer view in separate listview in
+
+                -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/image"
+                android:layout_marginTop="10dp">
+
+                <RelativeLayout
+                    android:id="@+id/firstmainrelative"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="#ffffff">
+
+
+                    <RelativeLayout
+                        android:id="@+id/firstinnerlayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+
+                        >
+
+
+                        <TextView
+                            android:id="@+id/ststus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:text="Status"
+                            android:textColor="#269b8f"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/ststusvalue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:text="6 Hour Before"
+                            android:textColor="#269b8f"
+                            android:textSize="18sp" />
+
+
+                    </RelativeLayout>
+
+
+                    <View
+                        android:id="@+id/view"
+                        android:layout_width="match_parent"
+                        android:layout_height="0.2dp"
+                        android:layout_below="@+id/firstinnerlayout"
+                        android:background="#80000000"></View>
+
+                    <TextView
+                        android:id="@+id/currentstatus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/view"
+                        android:layout_margin="10dp"
+                        android:text="At The Gyme"
+                        android:textColor="#000000"
+                        android:textSize="18sp" />
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/horizontalimagelayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/firstmainrelative"
+                    android:layout_margin="10dp"
+                    android:background="#ffffff">
+
+                    <RelativeLayout
+                        android:id="@+id/media"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+
+                        >
+
+                        <TextView
+                            android:id="@+id/mediatext"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_margin="10dp"
+                            android:text="Media Galary"
+                            android:textColor="#269b8f"
+
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/mediavalue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_margin="10dp"
+                            android:text="121"
+
+                            android:textColor="#269b8f"
+                            android:textSize="18sp" />
+
+                    </RelativeLayout>
+
+                    <View
+                        android:id="@+id/view2"
+                        android:layout_width="match_parent"
+                        android:layout_height="0.2dp"
+                        android:layout_below="@+id/media"
+                        android:background="#80000000"></View>
+
+
+                    <materialdesignstyle.mobimedia.com.materialdesignstyles.ui.Utility.HorizontalListView
+                        android:id="@+id/horizontalimagelist"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/view2"
+                        android:layout_margin="5dp"></materialdesignstyle.mobimedia.com.materialdesignstyles.ui.Utility.HorizontalListView>
+
+                </RelativeLayout>
+            </RelativeLayout>
+
+
+            <!--
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:paddingBottom="@dimen/activity_vertical_margin"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_vertical_margin"
+               />-->
+        </LinearLayout>
+
+
+    </matterialdesignlibrary.mobimedia.com.mobimedialibrary.ObservableScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/margin_standard">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:maxLines="1"
+            android:text="MobiMedia Technology"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/flexible_space_image_height"
+            android:background="@android:color/transparent" />
+    </LinearLayout>
+
+
+    <ImageButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left|top"
+        android:layout_marginBottom="@dimen/fab_button_margin_bottom"
+        android:layout_marginRight="@dimen/fab_button_margin_right"
+        android:background="@drawable/fab_shape"
+        android:scaleType="center"
+        android:src="@drawable/fab_ic_add"
+        android:tint="@android:color/white" />
+
+</RelativeLayout>

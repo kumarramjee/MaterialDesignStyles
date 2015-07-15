@@ -8,7 +8,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".ui.ui.Watsappactivity"
+            android:name=".ui.ui.WatttsAppActivtiy"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,6 +20,10 @@
             android:name=".ui.ui.MainActivity"
             android:label="@string/title_activity_main" >
         </activity>
+        <!--<activity
+            android:name=".ui.ui.WatttsAppActivtiy"
+            android:label="@string/title_activity_wattts_app_activtiy" >
+        </activity>-->
     </application>
 
 </manifest>

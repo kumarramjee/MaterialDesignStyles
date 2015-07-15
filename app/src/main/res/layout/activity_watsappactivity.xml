@@ -14,8 +14,8 @@
         android:id="@+id/rootlayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#80ffffff"
-        android:layout_below="@+id/toolbar">
+        android:layout_below="@+id/toolbar"
+        android:background="#80ffffff">
 
         <ImageView
             android:id="@+id/image"
@@ -36,8 +36,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:background="#ffffff"
-              >
+                android:background="#ffffff">
 
 
                 <RelativeLayout
@@ -96,8 +95,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/firstmainrelative"
-                android:background="#ffffff"
-                android:layout_margin="10dp">
+                android:layout_margin="10dp"
+                android:background="#ffffff">
 
                 <RelativeLayout
                     android:id="@+id/media"
@@ -111,23 +110,23 @@
                         android:id="@+id/mediatext"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Media Galary"
-                        android:textColor="#269b8f"
                         android:layout_alignParentLeft="true"
                         android:layout_margin="10dp"
+                        android:text="Media Galary"
+                        android:textColor="#269b8f"
 
                         android:textSize="18sp" />
+
                     <TextView
                         android:id="@+id/mediavalue"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="#269b8f"
                         android:layout_alignParentRight="true"
                         android:layout_margin="10dp"
-
-                        android:textSize="18sp"
                         android:text="121"
-                        />
+
+                        android:textColor="#269b8f"
+                        android:textSize="18sp" />
 
                 </RelativeLayout>
 
@@ -139,13 +138,12 @@
                     android:background="#80000000"></View>
 
 
-
                 <materialdesignstyle.mobimedia.com.materialdesignstyles.ui.Utility.HorizontalListView
                     android:id="@+id/horizontalimagelist"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:layout_below="@+id/view2"></materialdesignstyle.mobimedia.com.materialdesignstyles.ui.Utility.HorizontalListView>
+                    android:layout_below="@+id/view2"
+                    android:layout_margin="5dp"></materialdesignstyle.mobimedia.com.materialdesignstyles.ui.Utility.HorizontalListView>
 
             </RelativeLayout>
 
