@@ -10,8 +10,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import materialdesignstyle.mobimedia.com.materialdesignstyles.R;
+import materialdesignstyle.mobimedia.com.materialdesignstyles.ui.Adapter.HorizontalImageAdapter;
 import materialdesignstyle.mobimedia.com.materialdesignstyles.ui.Animation.ViewHelper;
 import materialdesignstyle.mobimedia.com.materialdesignstyles.ui.Animation.ViewPropertyAnimator;
+import materialdesignstyle.mobimedia.com.materialdesignstyles.ui.Utility.HorizontalListView;
 import matterialdesignlibrary.mobimedia.com.mobimedialibrary.ObservableScrollView;
 import matterialdesignlibrary.mobimedia.com.mobimedialibrary.ObservableScrollViewCallbacks;
 import matterialdesignlibrary.mobimedia.com.mobimedialibrary.ScrollState;
@@ -29,17 +31,27 @@ public class WatttsAppActivtiy extends Activity implements ObservableScrollViewC
     private int mFlexibleSpaceImageHeight;
     private int mFabMargin;
     private boolean mFabIsShown;
+    private HorizontalListView horizontalimagelist;
+    private HorizontalImageAdapter mHorizontalImageAdapter;
+
+    private int imagearray[] = {
+        R.drawable.scateredclouds, R.drawable.nonelse, R.drawable.fewclouds, R.drawable.brokenclouds, R.drawable.lightrain,
+                R.drawable.moderate, R.drawable.moderaterain, R.drawable.overcatclouds, R.drawable.scateredclouds
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wattts_app_activtiy);
 
+
         SetUPUI();
+
+
 
         mFlexibleSpaceImageHeight = getResources().getDimensionPixelSize(R.dimen.flexible_space_image_height);
         mFlexibleSpaceShowFabOffset = getResources().getDimensionPixelSize(R.dimen.flexible_space_show_fab_offset);
-        mActionBarSize = 100;
+        mActionBarSize = 60;
         mFab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,7 +64,7 @@ public class WatttsAppActivtiy extends Activity implements ObservableScrollViewC
         ScrollUtils.addOnGlobalLayoutListener(mScrollView, new Runnable() {
             @Override
             public void run() {
-                mScrollView.scrollTo(0, mFlexibleSpaceImageHeight - mActionBarSize);
+                //mScrollView.scrollTo(0, mFlexibleSpaceImageHeight - mActionBarSize);
 
                 // If you'd like to start from scrollY == 0, don't write like this:
                 //mScrollView.scrollTo(0, 0);
@@ -62,13 +74,14 @@ public class WatttsAppActivtiy extends Activity implements ObservableScrollViewC
 
                 // You can also achieve it with the following codes.
                 // This causes scroll change from 1 to 0.
-                //mScrollView.scrollTo(0, 1);
-                //mScrollView.scrollTo(0, 0);
+                mScrollView.scrollTo(0, 1);
+                mScrollView.scrollTo(0, 0);
             }
         });
 
         mScrollView.setScrollViewCallbacks(this);
-
+        mHorizontalImageAdapter=new HorizontalImageAdapter(WatttsAppActivtiy.this,imagearray);
+        //horizontalimagelist.setAdapter(mHorizontalImageAdapter);
     }
 
     private void SetUPUI() {
@@ -79,7 +92,7 @@ public class WatttsAppActivtiy extends Activity implements ObservableScrollViewC
         mTitleView = (TextView) findViewById(R.id.title);
         mTitleView.setText("MobiMedia Technology");
         mFab = (ImageView) findViewById(R.id.fab);
-
+        horizontalimagelist = (HorizontalListView) findViewById(R.id.horizontalimagelist);
 
     }
 
