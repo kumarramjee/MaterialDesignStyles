@@ -14,23 +14,23 @@ import materialdesignstyle.mobimedia.com.materialdesignstyles.R;
  */
 public class HorizontalImageAdapter extends BaseAdapter {
     private Context mContext;
-    private int[] imagearray;
+    private int  marraylirst;
     ImageView image;
 
-    public HorizontalImageAdapter(Context mContext, int[] imagearray) {
+    public HorizontalImageAdapter(Context mContext, int marraylirst) {
         this.mContext = mContext;
-        this.imagearray = imagearray;
+        this.marraylirst = marraylirst;
     }
 
 
     @Override
     public int getCount() {
-        return imagearray.length;
+        return marraylirst;
     }
 
     @Override
     public Object getItem(int position) {
-        return position;
+        return null;
     }
 
     @Override
@@ -46,25 +46,17 @@ public class HorizontalImageAdapter extends BaseAdapter {
 
         convertView = inflater.inflate(R.layout.imagefill, null);
 
-              image = (ImageView) convertView.findViewById(R.id.imageview);
+        image = (ImageView) convertView.findViewById(R.id.imageview);
 
-            int m = imagearray[position];
-            if (m == 1) {
-                image.setImageResource(R.drawable.sky);
-            } else if (m == 2) {
-                image.setImageResource(R.drawable.moderate);
-            } else if (m == 3) {
-                image.setImageResource(R.drawable.lightrain);
-            } else if (m == 4) {
-                image.setImageResource(R.drawable.sky);
-            } else if (m == 5) {
-                image.setImageResource(R.drawable.lihjtrain);
-            } else {
-                image.setImageResource(R.drawable.moderate);
-            }
+     for(int i=0;i<marraylirst;i++)
+     {
+         image.setImageResource(R.drawable.moderate);
+     }
+
+
 
         return convertView;
-        }
-
-
     }
+
+
+}

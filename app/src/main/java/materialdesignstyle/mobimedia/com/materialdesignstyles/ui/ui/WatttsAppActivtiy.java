@@ -11,6 +11,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 import materialdesignstyle.mobimedia.com.materialdesignstyles.R;
 import materialdesignstyle.mobimedia.com.materialdesignstyles.ui.Adapter.HorizontalImageAdapter;
 import materialdesignstyle.mobimedia.com.materialdesignstyles.ui.Animation.ViewHelper;
@@ -42,6 +44,8 @@ public class WatttsAppActivtiy extends Activity implements ObservableScrollViewC
     };
     private int mFabMargin;
     private Bitmap bm;
+    private ArrayList<String> marraylist = new ArrayList<String>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,7 +87,11 @@ public class WatttsAppActivtiy extends Activity implements ObservableScrollViewC
         mviewadd.addView(child);
 
 
-        mHorizontalImageAdapter = new HorizontalImageAdapter(WatttsAppActivtiy.this, imagearray);
+        //set String rraylisdt valur
+
+
+        int marray = 10;
+        mHorizontalImageAdapter = new HorizontalImageAdapter(WatttsAppActivtiy.this, marray);
         mhorizontalimagelist.setAdapter(mHorizontalImageAdapter);
 
 

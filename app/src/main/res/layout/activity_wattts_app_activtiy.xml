@@ -157,16 +157,16 @@
                         android:layout_below="@+id/view2"
                         android:layout_margin="5dp"></materialdesignstyle.mobimedia.com.materialdesignstyles.ui.Utility.HorizontalListView>
 
-
-                    <RelativeLayout
-                        android:id="@+id/viewadd"
-                        android:layout_width="match_parent"
-                        android:layout_marginTop="5dp"
-                        android:layout_below="@+id/horizontalimagelist"
-                        android:layout_height="wrap_content"></RelativeLayout>
-
                 </RelativeLayout>
             </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/viewadd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/firstmainrelative"
+                android:layout_marginTop="5dp"></RelativeLayout>
 
 
         </LinearLayout>
