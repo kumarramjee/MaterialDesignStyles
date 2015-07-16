@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -33,7 +32,6 @@ public class WatttsAppActivtiy extends Activity implements ObservableScrollViewC
     private int mActionBarSize;
     private int mFlexibleSpaceShowFabOffset;
     private int mFlexibleSpaceImageHeight;
-    private int mFabMargin;
     private boolean mFabIsShown;
     private HorizontalListView mhorizontalimagelist;
     private HorizontalImageAdapter mHorizontalImageAdapter;
@@ -42,7 +40,7 @@ public class WatttsAppActivtiy extends Activity implements ObservableScrollViewC
     private int imagearray[] = {R.drawable.sky, R.drawable.moderate, R.drawable.moderaterain, R.drawable.lightrain, R.drawable.nonelse, R.drawable.scateredclouds
 
     };
-
+    private int mFabMargin;
     private Bitmap bm;
 
     @Override
@@ -53,13 +51,13 @@ public class WatttsAppActivtiy extends Activity implements ObservableScrollViewC
 
         mFlexibleSpaceImageHeight = getResources().getDimensionPixelSize(R.dimen.flexible_space_image_height);
         mFlexibleSpaceShowFabOffset = getResources().getDimensionPixelSize(R.dimen.flexible_space_show_fab_offset);
-        mActionBarSize = 60;
+        mActionBarSize = 50;
 
 
         mFabMargin = getResources().getDimensionPixelSize(R.dimen.margin_standard);
-       /* ViewHelper.setScaleX(mFab, 0);
+      /*  ViewHelper.setScaleX(mFab, 0);
         ViewHelper.setScaleY(mFab, 0);
-       */
+      */
         ScrollUtils.addOnGlobalLayoutListener(mScrollView, new Runnable() {
             @Override
             public void run() {
@@ -74,12 +72,11 @@ public class WatttsAppActivtiy extends Activity implements ObservableScrollViewC
                 // You can also achieve it with the following codes.
                 // This causes scroll change from 1 to 0.
                 mScrollView.scrollTo(0, 1);
-                mScrollView.scrollTo(0, 0);
+                //  mScrollView.scrollTo(0, 0);
             }
         });
 
         mScrollView.setScrollViewCallbacks(this);
-
 
 
         View child = getLayoutInflater().inflate(R.layout.insertlayout, null);
@@ -105,7 +102,7 @@ public class WatttsAppActivtiy extends Activity implements ObservableScrollViewC
         mFab = (ImageView) findViewById(R.id.fab);
         mhorizontalimagelist = (HorizontalListView) findViewById(R.id.horizontalimagelist);
         mCirclularImageview = (RoundedImageView) findViewById(R.id.imageview);
-        mviewadd=(RelativeLayout)findViewById(R.id.viewadd);
+        mviewadd = (RelativeLayout) findViewById(R.id.viewadd);
     }
 
 
@@ -125,18 +122,16 @@ public class WatttsAppActivtiy extends Activity implements ObservableScrollViewC
         ViewHelper.setPivotY(mTitleView, 0);
         ViewHelper.setScaleX(mTitleView, scale);
         ViewHelper.setScaleY(mTitleView, scale);
-
         // Translate title text
         int maxTitleTranslationY = (int) (mFlexibleSpaceImageHeight - mTitleView.getHeight() * scale);
 
-        Log.i("",""+maxTitleTranslationY);
 
         int titleTranslationY = maxTitleTranslationY - scrollY;
-        Log.i("",""+titleTranslationY);
+
 
         ViewHelper.setTranslationY(mTitleView, titleTranslationY);
         //translate Circular Image
-        ViewHelper.setTranslationY(mCirclularImageview, titleTranslationY);
+        ViewHelper.setTranslationY(mCirclularImageview, titleTranslationY - 20);
 
         // Translate FAB
         int maxFabTranslationY = mFlexibleSpaceImageHeight - mFab.getHeight() / 2;
@@ -158,9 +153,9 @@ public class WatttsAppActivtiy extends Activity implements ObservableScrollViewC
 
 
         if (fabTranslationY < mFlexibleSpaceShowFabOffset) {
-          //  hideFab();
+            hideFab();
         } else {
-           // showFab();
+            showFab();
         }
     }
 

@@ -5,4 +5,13 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_wattts_app_activtiy">WatttsAppActivtiy</string>
+<string-array name="listvalues">
+
+    <item>WatsApp Animation</item>
+    <item>Image Popup</item>
+    <item>Refresh in Bottom</item>
+
+
+</string-array>
+
 </resources>
