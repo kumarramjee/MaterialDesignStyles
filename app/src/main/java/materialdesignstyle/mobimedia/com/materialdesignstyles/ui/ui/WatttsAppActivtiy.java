@@ -1,11 +1,14 @@
 package materialdesignstyle.mobimedia.com.materialdesignstyles.ui.ui;
 
 import android.app.Activity;
+import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -14,12 +17,13 @@ import materialdesignstyle.mobimedia.com.materialdesignstyles.ui.Adapter.Horizon
 import materialdesignstyle.mobimedia.com.materialdesignstyles.ui.Animation.ViewHelper;
 import materialdesignstyle.mobimedia.com.materialdesignstyles.ui.Animation.ViewPropertyAnimator;
 import materialdesignstyle.mobimedia.com.materialdesignstyles.ui.Utility.HorizontalListView;
+import materialdesignstyle.mobimedia.com.materialdesignstyles.ui.Utility.RoundedImageView;
 import matterialdesignlibrary.mobimedia.com.mobimedialibrary.ObservableScrollView;
 import matterialdesignlibrary.mobimedia.com.mobimedialibrary.ObservableScrollViewCallbacks;
 import matterialdesignlibrary.mobimedia.com.mobimedialibrary.ScrollState;
 import matterialdesignlibrary.mobimedia.com.mobimedialibrary.ScrollUtils;
 
-public class WatttsAppActivtiy extends Activity implements ObservableScrollViewCallbacks {
+public class WatttsAppActivtiy extends Activity implements ObservableScrollViewCallbacks, View.OnClickListener {
     private static final float MAX_TEXT_SCALE_DELTA = 0.3f;
     private View mImageView;
     private View mOverlayView;
@@ -31,32 +35,32 @@ public class WatttsAppActivtiy extends Activity implements ObservableScrollViewC
     private int mFlexibleSpaceImageHeight;
     private int mFabMargin;
     private boolean mFabIsShown;
-    private HorizontalListView horizontalimagelist;
+    private HorizontalListView mhorizontalimagelist;
     private HorizontalImageAdapter mHorizontalImageAdapter;
+    private RoundedImageView mCirclularImageview;
+    private RelativeLayout mviewadd;
+    private int imagearray[] = {R.drawable.sky, R.drawable.moderate, R.drawable.moderaterain, R.drawable.lightrain, R.drawable.nonelse, R.drawable.scateredclouds
 
-    private int imagearray[] = {
-            R.drawable.scateredclouds, R.drawable.nonelse, R.drawable.fewclouds, R.drawable.brokenclouds, R.drawable.lightrain,
-            R.drawable.moderate, R.drawable.moderaterain, R.drawable.overcatclouds, R.drawable.scateredclouds
     };
+
+    private Bitmap bm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wattts_app_activtiy);
         SetUPUI();
+
         mFlexibleSpaceImageHeight = getResources().getDimensionPixelSize(R.dimen.flexible_space_image_height);
         mFlexibleSpaceShowFabOffset = getResources().getDimensionPixelSize(R.dimen.flexible_space_show_fab_offset);
         mActionBarSize = 60;
-        mFab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(WatttsAppActivtiy.this, "FAB is clicked", Toast.LENGTH_SHORT).show();
-            }
-        });
+
+
         mFabMargin = getResources().getDimensionPixelSize(R.dimen.margin_standard);
        /* ViewHelper.setScaleX(mFab, 0);
         ViewHelper.setScaleY(mFab, 0);
-       */ ScrollUtils.addOnGlobalLayoutListener(mScrollView, new Runnable() {
+       */
+        ScrollUtils.addOnGlobalLayoutListener(mScrollView, new Runnable() {
             @Override
             public void run() {
                 //mScrollView.scrollTo(0, mFlexibleSpaceImageHeight - mActionBarSize);
@@ -75,9 +79,21 @@ public class WatttsAppActivtiy extends Activity implements ObservableScrollViewC
         });
 
         mScrollView.setScrollViewCallbacks(this);
+
+
+
+        View child = getLayoutInflater().inflate(R.layout.insertlayout, null);
+        mviewadd.addView(child);
+
+
         mHorizontalImageAdapter = new HorizontalImageAdapter(WatttsAppActivtiy.this, imagearray);
-        //horizontalimagelist.setAdapter(mHorizontalImageAdapter);
+        mhorizontalimagelist.setAdapter(mHorizontalImageAdapter);
+
+
+        mFab.setOnClickListener(this);
+
     }
+
 
     private void SetUPUI() {
 
@@ -87,8 +103,9 @@ public class WatttsAppActivtiy extends Activity implements ObservableScrollViewC
         mTitleView = (TextView) findViewById(R.id.title);
         mTitleView.setText("MobiMedia Technology");
         mFab = (ImageView) findViewById(R.id.fab);
-        horizontalimagelist = (HorizontalListView) findViewById(R.id.horizontalimagelist);
-
+        mhorizontalimagelist = (HorizontalListView) findViewById(R.id.horizontalimagelist);
+        mCirclularImageview = (RoundedImageView) findViewById(R.id.imageview);
+        mviewadd=(RelativeLayout)findViewById(R.id.viewadd);
     }
 
 
@@ -111,8 +128,15 @@ public class WatttsAppActivtiy extends Activity implements ObservableScrollViewC
 
         // Translate title text
         int maxTitleTranslationY = (int) (mFlexibleSpaceImageHeight - mTitleView.getHeight() * scale);
+
+        Log.i("",""+maxTitleTranslationY);
+
         int titleTranslationY = maxTitleTranslationY - scrollY;
+        Log.i("",""+titleTranslationY);
+
         ViewHelper.setTranslationY(mTitleView, titleTranslationY);
+        //translate Circular Image
+        ViewHelper.setTranslationY(mCirclularImageview, titleTranslationY);
 
         // Translate FAB
         int maxFabTranslationY = mFlexibleSpaceImageHeight - mFab.getHeight() / 2;
@@ -134,9 +158,9 @@ public class WatttsAppActivtiy extends Activity implements ObservableScrollViewC
 
 
         if (fabTranslationY < mFlexibleSpaceShowFabOffset) {
-            hideFab();
+          //  hideFab();
         } else {
-            showFab();
+           // showFab();
         }
     }
 
@@ -157,6 +181,8 @@ public class WatttsAppActivtiy extends Activity implements ObservableScrollViewC
             ViewPropertyAnimator.animate(mFab).scaleX(1).scaleY(1).setDuration(200).start();
             mFabIsShown = true;
         }
+
+
     }
 
     private void hideFab() {
@@ -165,7 +191,18 @@ public class WatttsAppActivtiy extends Activity implements ObservableScrollViewC
             ViewPropertyAnimator.animate(mFab).scaleX(0).scaleY(0).setDuration(200).start();
             mFabIsShown = false;
         }
+        // mFab.setVisibility(View.INVISIBLE);
     }
 
 
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.image:
+                Toast.makeText(WatttsAppActivtiy.this, "FAB is clicked", Toast.LENGTH_SHORT).show();
+                break;
+            default:
+                break;
+        }
+    }
 }

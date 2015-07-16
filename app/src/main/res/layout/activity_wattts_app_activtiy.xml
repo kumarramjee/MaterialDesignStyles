@@ -4,7 +4,6 @@
     android:layout_height="match_parent">
 
 
-
     <ImageView
         android:id="@+id/image"
         android:layout_width="match_parent"
@@ -158,96 +157,16 @@
                         android:layout_below="@+id/view2"
                         android:layout_margin="5dp"></materialdesignstyle.mobimedia.com.materialdesignstyles.ui.Utility.HorizontalListView>
 
+
+                    <RelativeLayout
+                        android:id="@+id/viewadd"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="5dp"
+                        android:layout_below="@+id/horizontalimagelist"
+                        android:layout_height="wrap_content"></RelativeLayout>
+
                 </RelativeLayout>
             </RelativeLayout>
-
-            <TextView
-                android:id="@+id/textid1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Hi how are you" />
-
-
-            <TextView
-                android:id="@+id/textid2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Hi how are you" />
-            <TextView
-                android:id="@+id/textid12"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Hi how are you" />
-            <TextView
-                android:id="@+id/textid21"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Hi how are you" />
-            <TextView
-                android:id="@+id/textid12121"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Hi how are you" />
-            <TextView
-                android:id="@+id/textid21212121"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Hi how are you" />
-            <TextView
-                android:id="@+id/textidvv"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Hi how are you" />
-            <TextView
-                android:id="@+id/textid12121233"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Hi how are you" />
-            <TextView
-                android:id="@+id/textid32"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Hi how are you" />
-            <TextView
-                android:id="@+id/textid21244"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Hi how are you" />
-            <TextView
-                android:id="@+id/textid533"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Hi how are you" />
-            <TextView
-                android:id="@+id/textid4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Hi how are you" />
-            <TextView
-                android:id="@+id/textid44"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Hi how are you" />
-            <TextView
-                android:id="@+id/textid"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Hi how are you" />
-            <TextView
-                android:id="@+id/textid4343"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Hi how are you" />
-            <TextView
-                android:id="@+id/textid434343434"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Hi how are you" />
-            <TextView
-                android:id="@+id/textid666"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Hi how are you" />
 
 
         </LinearLayout>
@@ -261,19 +180,31 @@
         android:orientation="vertical"
         android:paddingLeft="@dimen/margin_standard">
 
+
+        <materialdesignstyle.mobimedia.com.materialdesignstyles.ui.Utility.RoundedImageView
+            android:id="@+id/imageview"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="-150dp"
+            android:src="@drawable/lightrain" />
+
         <TextView
             android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="26dp"
             android:ellipsize="end"
             android:gravity="center_vertical"
             android:maxLines="1"
             android:text="MobiMedia Technology"
             android:textColor="@android:color/white"
-            android:textSize="20sp" />
+            android:textSize="22sp" />
+
+
         <View
             android:layout_width="match_parent"
-            android:layout_height="@dimen/flexible_space_image_height"
+            android:layout_height="match_parent"
             android:background="@android:color/transparent" />
 
     </LinearLayout>
@@ -282,11 +213,11 @@
         android:id="@+id/fab"
         android:layout_width="56dp"
         android:layout_height="56dp"
+        android:layout_gravity="top|left"
         android:layout_marginBottom="@dimen/fab_button_margin_bottom"
         android:layout_marginRight="@dimen/fab_button_margin_right"
         android:background="@drawable/fab_shape"
         android:scaleType="centerCrop"
-        android:layout_gravity="top|left"
         android:src="@drawable/fab_ic_add"
         android:tint="@android:color/white" />
 
