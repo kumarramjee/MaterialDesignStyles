@@ -1,8 +1,10 @@
 package materialdesignstyle.mobimedia.com.materialdesignstyles.ui.ui;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -117,8 +119,10 @@ public class WatttsAppActivtiy extends Activity implements ObservableScrollViewC
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                Toast.makeText(WatttsAppActivtiy.this,"WattsappActivity item cliciked"+position+".",Toast.LENGTH_SHORT).show();
-
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_VIEW);
+                intent.setDataAndType(Uri.parse("mImage"), "image/*");
+                startActivity(intent);
             }
         });
 
