@@ -1,9 +1,13 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <!--
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/transparenttoolbar"></include>
 
-
+      -->
     <ImageView
         android:id="@+id/image"
         android:layout_width="match_parent"
@@ -150,13 +154,18 @@
                         android:background="#80000000"></View>
 
 
-                    <materialdesignstyle.mobimedia.com.materialdesignstyles.ui.Utility.HorizontalListView
+                    <GridView
                         android:id="@+id/horizontalimagelist"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="100dp"
                         android:layout_below="@+id/view2"
-                        android:layout_margin="5dp"></materialdesignstyle.mobimedia.com.materialdesignstyles.ui.Utility.HorizontalListView>
+                        android:layout_margin="5dp"
+                        android:columnWidth="150dp"
+                        android:stretchMode="columnWidth"
+                        android:gravity="center"
+                        android:numColumns="3"
 
+                        ></GridView>
                 </RelativeLayout>
             </RelativeLayout>
 
@@ -166,6 +175,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/firstmainrelative"
+                android:layout_margin="10dp"
                 android:layout_marginTop="5dp"></RelativeLayout>
 
 
@@ -221,4 +231,4 @@
         android:src="@drawable/fab_ic_add"
         android:tint="@android:color/white" />
 
-</FrameLayout>
+</RelativeLayout>
