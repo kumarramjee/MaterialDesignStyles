@@ -21,10 +21,7 @@
             android:layout_width="match_parent"
             android:layout_height="2dp"
             android:background="#124578" />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="HI how are you"/>
+
 
 
     </LinearLayout>

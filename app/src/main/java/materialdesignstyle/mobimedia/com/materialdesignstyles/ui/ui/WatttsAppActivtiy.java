@@ -93,11 +93,6 @@ public class WatttsAppActivtiy extends Activity implements ObservableScrollViewC
         //set layout to another view
         View child = getLayoutInflater().inflate(R.layout.insertlayout, null);
         mviewadd.addView(child);
-
-
-        //set String rraylisdt valur
-
-
         mFab.setOnClickListener(this);
 
 
@@ -135,7 +130,7 @@ public class WatttsAppActivtiy extends Activity implements ObservableScrollViewC
         mOverlayView = findViewById(R.id.overlay);
         mScrollView = (ObservableScrollView) findViewById(R.id.scroll);
         mTitleView = (TextView) findViewById(R.id.title);
-        mTitleView.setText("MobiMedia Technology");
+        mTitleView.setText("Android Technology");
         mFab = (ImageView) findViewById(R.id.fab);
         mGridlimagelist = (GridView) findViewById(R.id.horizontalimagelist);
         mCirclularImageview = (RoundedImageView) findViewById(R.id.imageview);

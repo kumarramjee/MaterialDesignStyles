@@ -207,7 +207,7 @@
             android:ellipsize="end"
             android:gravity="center_vertical"
             android:maxLines="1"
-            android:text="MobiMedia Technology"
+            android:text="Android Technology"
             android:textColor="@android:color/white"
             android:textSize="22sp" />
 
